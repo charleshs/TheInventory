@@ -20,7 +20,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             // Handled by SceneDelegate
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
-            window?.rootViewController = ViewController()
+            window?.rootViewController = AppRootFactory().makeRoot()
             window?.makeKeyAndVisible()
         }
         return true
