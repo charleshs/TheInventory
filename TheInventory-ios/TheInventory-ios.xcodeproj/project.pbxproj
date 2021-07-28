@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		7C0D0E9F26B03A17001D8A9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */; };
 		7C0D0EA626B03A1A001D8A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */; };
 		7C0D0EA926B03A1A001D8A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */; };
+		7C38679026B1C5AB007F1DC0 /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C38678F26B1C5AB007F1DC0 /* DevKit */; };
 		7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837C26B1831300406209 /* AssetFormViewController.swift */; };
 		7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837E26B183A300406209 /* AssetSceneFactory.swift */; };
 		7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838026B1840600406209 /* AppRootFactory.swift */; };
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C38679026B1C5AB007F1DC0 /* DevKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +129,9 @@
 			dependencies = (
 			);
 			name = "TheInventory-ios";
+			packageProductDependencies = (
+				7C38678F26B1C5AB007F1DC0 /* DevKit */,
+			);
 			productName = "TheInventory-ios";
 			productReference = 7C0D0E9926B03A17001D8A9B /* TheInventory-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +159,9 @@
 				Base,
 			);
 			mainGroup = 7C0D0E9026B03A17001D8A9B;
+			packageReferences = (
+				7C38678E26B1C5AB007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */,
+			);
 			productRefGroup = 7C0D0E9A26B03A17001D8A9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,6 +395,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C38678E26B1C5AB007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/charleshs/Developer/Swift/DevKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C38678F26B1C5AB007F1DC0 /* DevKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C38678E26B1C5AB007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */;
+			productName = DevKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C0D0E9126B03A17001D8A9B /* Project object */;
 }

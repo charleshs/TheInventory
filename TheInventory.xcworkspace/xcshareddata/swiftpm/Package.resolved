@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DevKit",
+        "repositoryURL": "/Users/charleshs/Developer/Swift/DevKit",
+        "state": {
+          "branch": "develop",
+          "revision": "adcc5b3dc648552ebbbb42a0a3786def4f00cef6",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

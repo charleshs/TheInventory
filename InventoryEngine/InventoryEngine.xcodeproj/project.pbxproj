@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		7C0D0EB826B03BEE001D8A9B /* AssetLocationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB726B03BEE001D8A9B /* AssetLocationImage.swift */; };
 		7C0D0EBA26B03BFE001D8A9B /* AssetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */; };
 		7C0D0EBC26B03D0F001D8A9B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */; };
+		7C38679326B1C5E3007F1DC0 /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C38679226B1C5E3007F1DC0 /* DevKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C38679326B1C5E3007F1DC0 /* DevKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,10 +62,10 @@
 			children = (
 				7C0D0E7F26B034F9001D8A9B /* InventoryEngine.h */,
 				7C0D0E8026B034F9001D8A9B /* Info.plist */,
-				7C0D0EB526B03BAC001D8A9B /* Asset */,
-				7C0D0EB626B03BD7001D8A9B /* AssetLocation */,
 				7C0D0E8E26B03888001D8A9B /* Expiry.swift */,
 				7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */,
+				7C0D0EB526B03BAC001D8A9B /* Asset */,
+				7C0D0EB626B03BD7001D8A9B /* AssetLocation */,
 			);
 			path = InventoryEngine;
 			sourceTree = "<group>";
@@ -114,6 +116,9 @@
 			dependencies = (
 			);
 			name = InventoryEngine;
+			packageProductDependencies = (
+				7C38679226B1C5E3007F1DC0 /* DevKit */,
+			);
 			productName = InventoryEngine;
 			productReference = 7C0D0E7C26B034F9001D8A9B /* InventoryEngine.framework */;
 			productType = "com.apple.product-type.framework";
@@ -141,6 +146,9 @@
 				Base,
 			);
 			mainGroup = 7C0D0E7226B034F9001D8A9B;
+			packageReferences = (
+				7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */,
+			);
 			productRefGroup = 7C0D0E7D26B034F9001D8A9B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -376,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "file:///Users/charleshs/Developer/Swift/DevKit";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C38679226B1C5E3007F1DC0 /* DevKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */;
+			productName = DevKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C0D0E7326B034F9001D8A9B /* Project object */;
 }
