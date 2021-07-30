@@ -11,8 +11,15 @@
 		7C0D0E9F26B03A17001D8A9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */; };
 		7C0D0EA626B03A1A001D8A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */; };
 		7C0D0EA926B03A1A001D8A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */; };
+		7C3488E226B2F9B000893DD6 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3488E126B2F9B000893DD6 /* TextView.swift */; };
+		7C37F66F26B41B2D0041DB36 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F66E26B41B2D0041DB36 /* UIViewExtensions.swift */; };
 		7C37F67126B43FD90041DB36 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F67026B43FD90041DB36 /* AppearanceManager.swift */; };
+		7C37F67326B4410E0041DB36 /* EdgeLineConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F67226B4410E0041DB36 /* EdgeLineConfigurable.swift */; };
+		7C37F67826B447F40041DB36 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F67726B447F40041DB36 /* ArrayExtensions.swift */; };
 		7C38679026B1C5AB007F1DC0 /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C38678F26B1C5AB007F1DC0 /* DevKit */; };
+		7C38679526B1CB9A007F1DC0 /* ListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679426B1CB9A007F1DC0 /* ListScrollView.swift */; };
+		7C38679A26B23E45007F1DC0 /* AssetFormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679926B23E45007F1DC0 /* AssetFormTextField.swift */; };
+		7C38679C26B2409D007F1DC0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679B26B2409D007F1DC0 /* TextField.swift */; };
 		7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837C26B1831300406209 /* AssetFormViewController.swift */; };
 		7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837E26B183A300406209 /* AssetSceneFactory.swift */; };
 		7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838026B1840600406209 /* AppRootFactory.swift */; };
@@ -31,7 +38,13 @@
 		7C0D0EA826B03A1A001D8A9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0D0EAA26B03A1A001D8A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0D0EB126B03B14001D8A9B /* InventoryEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InventoryEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3488E126B2F9B000893DD6 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		7C37F66E26B41B2D0041DB36 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		7C37F67026B43FD90041DB36 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
+		7C37F67226B4410E0041DB36 /* EdgeLineConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeLineConfigurable.swift; sourceTree = "<group>"; };
+		7C37F67726B447F40041DB36 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		7C38679426B1CB9A007F1DC0 /* ListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScrollView.swift; sourceTree = "<group>"; };
+		7C38679B26B2409D007F1DC0 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		7C6B837C26B1831300406209 /* AssetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormViewController.swift; sourceTree = "<group>"; };
 		7C6B837E26B183A300406209 /* AssetSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSceneFactory.swift; sourceTree = "<group>"; };
 		7C6B838026B1840600406209 /* AppRootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootFactory.swift; sourceTree = "<group>"; };
@@ -80,6 +93,8 @@
 				7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */,
 				7C0D0EBD26B0E8D8001D8A9B /* Application */,
 				7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */,
+				7C38679826B1CCCE007F1DC0 /* Components */,
+				7C37F66D26B41B210041DB36 /* Extensions */,
 				7C6B838626B1929500406209 /* Theme */,
 			);
 			path = "TheInventory-ios";
@@ -102,6 +117,26 @@
 				7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		7C37F66D26B41B210041DB36 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C37F67726B447F40041DB36 /* ArrayExtensions.swift */,
+				7C37F66E26B41B2D0041DB36 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C38679826B1CCCE007F1DC0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7C37F67226B4410E0041DB36 /* EdgeLineConfigurable.swift */,
+				7C38679426B1CB9A007F1DC0 /* ListScrollView.swift */,
+				7C38679B26B2409D007F1DC0 /* TextField.swift */,
+				7C3488E126B2F9B000893DD6 /* TextView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		7C6B838626B1929500406209 /* Theme */ = {
@@ -196,8 +231,13 @@
 				7C6B838E26B1933900406209 /* ThemeableFactory.swift in Sources */,
 				7C6B838A26B192CB00406209 /* Theme.swift in Sources */,
 				7C37F67126B43FD90041DB36 /* AppearanceManager.swift in Sources */,
+				7C38679C26B2409D007F1DC0 /* TextField.swift in Sources */,
+				7C38679526B1CB9A007F1DC0 /* ListScrollView.swift in Sources */,
 				7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */,
+				7C37F66F26B41B2D0041DB36 /* UIViewExtensions.swift in Sources */,
 				7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */,
+				7C3488E226B2F9B000893DD6 /* TextView.swift in Sources */,
+				7C37F67326B4410E0041DB36 /* EdgeLineConfigurable.swift in Sources */,
 				7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */,
 				7C0D0E9D26B03A17001D8A9B /* AppDelegate.swift in Sources */,
 				7C6B838326B1865000406209 /* ComingSoonViewController.swift in Sources */,
