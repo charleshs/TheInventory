@@ -8,6 +8,7 @@
 import UIKit
 
 struct DefaultTheme: Theme {
-    
+
+    let userInterfaceStyle: UIUserInterfaceStyle = .light
     let mainBackground: UIColor = .white
 }

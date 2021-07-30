@@ -13,7 +13,7 @@ protocol ThemeableFactory {
 }
 
 extension ThemeableFactory {
-    
+
     func decorated<T: UIViewController>(viewController creator: () -> T) -> T {
         let controller = creator()
         if let themeable = controller as? Themeable {

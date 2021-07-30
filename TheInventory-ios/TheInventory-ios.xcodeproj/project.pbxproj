@@ -11,6 +11,7 @@
 		7C0D0E9F26B03A17001D8A9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */; };
 		7C0D0EA626B03A1A001D8A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */; };
 		7C0D0EA926B03A1A001D8A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */; };
+		7C37F67126B43FD90041DB36 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F67026B43FD90041DB36 /* AppearanceManager.swift */; };
 		7C38679026B1C5AB007F1DC0 /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C38678F26B1C5AB007F1DC0 /* DevKit */; };
 		7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837C26B1831300406209 /* AssetFormViewController.swift */; };
 		7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837E26B183A300406209 /* AssetSceneFactory.swift */; };
@@ -30,6 +31,7 @@
 		7C0D0EA826B03A1A001D8A9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0D0EAA26B03A1A001D8A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0D0EB126B03B14001D8A9B /* InventoryEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InventoryEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C37F67026B43FD90041DB36 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		7C6B837C26B1831300406209 /* AssetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormViewController.swift; sourceTree = "<group>"; };
 		7C6B837E26B183A300406209 /* AssetSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSceneFactory.swift; sourceTree = "<group>"; };
 		7C6B838026B1840600406209 /* AppRootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootFactory.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		7C6B838626B1929500406209 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				7C37F67026B43FD90041DB36 /* AppearanceManager.swift */,
 				7C6B838B26B192E000406209 /* DefaultTheme.swift */,
 				7C6B838926B192CB00406209 /* Theme.swift */,
 				7C6B838726B192B700406209 /* Themeable.swift */,
@@ -192,6 +195,7 @@
 				7C6B838826B192B700406209 /* Themeable.swift in Sources */,
 				7C6B838E26B1933900406209 /* ThemeableFactory.swift in Sources */,
 				7C6B838A26B192CB00406209 /* Theme.swift in Sources */,
+				7C37F67126B43FD90041DB36 /* AppearanceManager.swift in Sources */,
 				7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */,
 				7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */,
 				7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 
 public protocol Theme {
-    
+
+    var userInterfaceStyle: UIUserInterfaceStyle { get }
     var mainBackground: UIColor { get }
 }

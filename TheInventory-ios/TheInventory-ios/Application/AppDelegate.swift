@@ -23,6 +23,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = AppRootFactory().makeRoot()
             window?.makeKeyAndVisible()
         }
+
+        AppearanceManager.shared.applyDefaultAppearance()
         return true
     }
 
