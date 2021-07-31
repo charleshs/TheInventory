@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import InventoryEngine
 
 public struct AssetSceneFactory: ThemeableFactory {
 

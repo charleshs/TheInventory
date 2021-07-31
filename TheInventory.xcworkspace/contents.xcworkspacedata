@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:TheInventory-ios/TheInventory-ios.xcodeproj">
+      location = "group:TheInventory/TheInventory.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:InventoryEngine/InventoryEngine.xcodeproj">

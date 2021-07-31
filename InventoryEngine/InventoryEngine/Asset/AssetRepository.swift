@@ -11,7 +11,7 @@ public protocol AssetRepository {
 
     func fetchAssets(completion: @escaping (Result<[Asset], Error>) -> Void)
 
-    func saveAsset(_: Asset, completion: @escaping (Result<String, Error>) -> Void)
+    func saveAsset(_: Asset, completion: @escaping (Result<AssetIdentifier, Error>) -> Void)
 
-    func deleteAsset(uuid: String, completion: @escaping (Result<String, Error>) -> Void)
+    func deleteAsset(uuid: String, completion: @escaping (Result<AssetIdentifier, Error>) -> Void)
 }
