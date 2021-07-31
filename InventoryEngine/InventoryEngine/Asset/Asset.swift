@@ -7,20 +7,25 @@
 
 import Foundation
 
+public typealias AssetIdentifier = String
+
 public struct Asset: Hashable {
 
-    let uuid: String
+    public let uuid: AssetIdentifier
 
-    var name: String
+    public var name: String
 
-    let dateCreated: Date
+    public var detail: String
 
-    var dateUpdated: Date
+    public let dateCreated: Date
 
-    public init(name: String, dateCreated: Date = Date()) {
+    public internal(set) var dateUpdated: Date
+
+    public init(name: String, detail: String, dateCreated: Date = Date()) {
         self.uuid = UUID().uuidString
         self.dateCreated = dateCreated
         self.dateUpdated = dateCreated
         self.name = name
+        self.detail = detail
     }
 }
