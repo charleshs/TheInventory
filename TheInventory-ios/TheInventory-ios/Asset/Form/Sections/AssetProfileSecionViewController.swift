@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AssetProfileSecionViewController: UIViewController, AssetItemUpdatable {
+final class AssetProfileSecionViewController: UIViewController, AssetObjectUpdatable {
 
     var assetName: String? { assetNameTextField.text }
 
@@ -31,9 +31,9 @@ final class AssetProfileSecionViewController: UIViewController, AssetItemUpdatab
         editorColumnStack.pasteOn(view)
     }
 
-    func update(by item: AssetItem) {
-        assetNameTextField.text = item.name
-        assetDetailTextView.text = item.detail
+    func update(by asset: AssetObject) {
+        assetNameTextField.text = asset.name
+        assetDetailTextView.text = asset.detail
     }
 
     private lazy var editorColumnStack = UIStackView(axis: .vertical, spacing: 0, distribution: .fill, alignment: .fill)

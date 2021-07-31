@@ -11,30 +11,30 @@ protocol AssetFormPresentableDelegate: AnyObject {
 
     func loadingStatusChanged(_ presenter: AssetFormPresentable, isLoading: Bool)
 
-    func assetItemSaved(_ presenter: AssetFormPresentable)
+    func assetObjectSaved(_ presenter: AssetFormPresentable)
 }
 
 protocol AssetFormPresentable {
 
     var delegate: AssetFormPresentableDelegate? { get set }
 
-    var assetItem: AssetItem { get }
+    var assetObject: AssetObject { get }
 }
 
 final class AssetFormPresenter: Presenter, AssetFormPresentable {
 
     weak var delegate: AssetFormPresentableDelegate?
 
-    let assetItem: AssetItem
+    let assetObject: AssetObject
 
-    init(assetItem: AssetItem) {
-        self.assetItem = assetItem
+    init(assetObject: AssetObject) {
+        self.assetObject = assetObject
     }
 }
 
 extension AssetFormPresenter: AssetFormInteractorDelegate {
 
-    func interactor(_ interactor: AssetFormInteractor, didStartSaveOperationOn asset: AssetItem) {
+    func interactor(_ interactor: AssetFormInteractor, didStartSaveOperationOn asset: AssetObject) {
         delegate?.loadingStatusChanged(self, isLoading: true)
     }
 
@@ -46,7 +46,7 @@ extension AssetFormPresenter: AssetFormInteractorDelegate {
             // Todo: handle error
             break
         case .success(_):
-            delegate?.assetItemSaved(self)
+            delegate?.assetObjectSaved(self)
         }
     }
 }

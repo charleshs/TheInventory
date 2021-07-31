@@ -11,7 +11,7 @@ public protocol AssetFormInteractable {
 
     func validateName(_ name: String?) -> Result<String, Error>
     func validateDetail(_ detail: String) -> Result<String, Error>
-    func submitAssetItem(_ item: AssetItem)
+    func submitAsset(_ asset: AssetObject)
 }
 
 public final class AssetFormViewController: UIViewController {
@@ -20,7 +20,7 @@ public final class AssetFormViewController: UIViewController {
 
     private let presenter: AssetFormPresentable
 
-    private let assetItem: AssetItem
+    private let asset: AssetObject
 
     private lazy var profileSectionVC = AssetProfileSecionViewController()
 
@@ -46,7 +46,7 @@ public final class AssetFormViewController: UIViewController {
 
     init(presenter: AssetFormPresentable) {
         self.presenter = presenter
-        self.assetItem = presenter.assetItem
+        self.asset = presenter.assetObject
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -67,7 +67,7 @@ public final class AssetFormViewController: UIViewController {
         addChild(profileSectionVC)
         listScrollView.append(profileSectionVC.view)
         profileSectionVC.didMove(toParent: self)
-        profileSectionVC.update(by: assetItem)
+        profileSectionVC.update(by: asset)
 
 //        let assetImageViewStack = UIStackView(axis: .vertical, spacing: 0, distribution: .fill, alignment: .leading)
 //        assetImageViewStack.addArrangedSubview(assetImageView)
@@ -104,9 +104,9 @@ public final class AssetFormViewController: UIViewController {
             return print("Interactor is missing in \(Self.self)")
         }
         do {
-            assetItem.name = try interactor.validateName(profileSectionVC.assetName).get()
-            assetItem.detail = try interactor.validateDetail(profileSectionVC.assetDetail).get()
-            interactor.submitAssetItem(assetItem)
+            asset.name = try interactor.validateName(profileSectionVC.assetName).get()
+            asset.detail = try interactor.validateDetail(profileSectionVC.assetDetail).get()
+            interactor.submitAsset(asset)
         } catch {
             print(error)
         }
@@ -127,7 +127,7 @@ extension AssetFormViewController: AssetFormPresentableDelegate {
 
     }
 
-    func assetItemSaved(_ presenter: AssetFormPresentable) {
+    func assetObjectSaved(_ presenter: AssetFormPresentable) {
         navigationController?.popViewController(animated: true)
     }
 }

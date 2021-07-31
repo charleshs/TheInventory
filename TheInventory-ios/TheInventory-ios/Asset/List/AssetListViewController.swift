@@ -9,9 +9,9 @@ import UIKit
 
 final class AssetListViewController: UIViewController {
 
-    private let dataStore: AssetItemDataStore
+    private let dataStore: AssetObjectDataStore
 
-    init(dataStore: AssetItemDataStore) {
+    init(dataStore: AssetObjectDataStore) {
         self.dataStore = dataStore
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,7 +36,7 @@ final class AssetListViewController: UIViewController {
     }
 
     @objc private func tapFloatingAddButton() {
-        let assetFormVC = AssetSceneFactory().makeAssetForm(AssetItem.create())
+        let assetFormVC = AssetSceneFactory().makeAssetForm(AssetObject.create())
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
 
@@ -49,11 +49,11 @@ final class AssetListViewController: UIViewController {
 
     private var dataStoreListener: Cancellable?
     private func setupDataStore() {
-        dataStoreListener = dataStore.subscribe({ [weak self] _ in
+        dataStoreListener = dataStore.subscribe { [weak self] _ in
             DispatchQueue.main.async {
                 self?.listTableView.reloadData()
             }
-        })
+        }
     }
 
     private func layoutListTableView() {
@@ -84,20 +84,21 @@ extension AssetListViewController: Themeable {
 extension AssetListViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataStore.assetItems.count
+        return dataStore.objects.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let asset = dataStore.assetItems[indexPath.row]
+        let asset = dataStore.objects[indexPath.row]
 
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.textLabel?.text = asset.name
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let asset = dataStore.assetItems[indexPath.row]
+        let asset = dataStore.objects[indexPath.row]
         let assetFormVC = AssetSceneFactory().makeAssetForm(asset)
         navigationController?.pushViewController(assetFormVC, animated: true)
     }

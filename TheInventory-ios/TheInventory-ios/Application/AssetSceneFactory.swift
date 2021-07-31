@@ -20,10 +20,10 @@ struct AssetSceneFactory: ThemeableFactory {
         return decorated { AssetListViewController(dataStore: dataStore) }
     }
 
-    func makeAssetForm(_ assetItem: AssetItem) -> UIViewController {
+    func makeAssetForm(_ asset: AssetObject) -> UIViewController {
         let saveHandler = InMemoryMockAssetStorage.shared
         let interactor = AssetFormInteractor(saveHandler: saveHandler)
-        let presenter = AssetFormPresenter(assetItem: assetItem)
+        let presenter = AssetFormPresenter(assetObject: asset)
         let viewController = AssetFormViewController(presenter: presenter)
 
         viewController.interactor = interactor

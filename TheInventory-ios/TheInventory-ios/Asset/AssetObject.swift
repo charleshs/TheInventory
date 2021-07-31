@@ -1,5 +1,5 @@
 //
-//  AssetItem.swift
+//  AssetObject.swift
 //  TheInventory-ios
 //
 //  Created by Charles Hsieh on 2021/7/29.
@@ -8,7 +8,7 @@
 import UIKit
 import InventoryEngine
 
-public final class AssetItem: NSObject {
+public final class AssetObject: NSObject {
 
     var isNewAsset: Bool { uuid == nil }
 
@@ -18,7 +18,7 @@ public final class AssetItem: NSObject {
 
     private var uuid: String?
 
-    public static func create() -> AssetItem {
+    public static func create() -> AssetObject {
         return .init(name: "", detail: "")
     }
 

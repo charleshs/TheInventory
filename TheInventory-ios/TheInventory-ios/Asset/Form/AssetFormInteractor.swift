@@ -9,7 +9,7 @@ import Foundation
 
 protocol AssetFormInteractorDelegate: AnyObject {
 
-    func interactor(_ interactor: AssetFormInteractor, didStartSaveOperationOn asset: AssetItem)
+    func interactor(_ interactor: AssetFormInteractor, didStartSaveOperationOn asset: AssetObject)
     func interactor(_ interactor: AssetFormInteractor, didFinishSaveOperationWith result: Result<String, Error>)
 }
 
@@ -17,9 +17,9 @@ final class AssetFormInteractor: Interactor, AssetFormInteractable {
 
     weak var delegate: AssetFormInteractorDelegate?
 
-    private let saveHandler: SaveAssetItemHandler
+    private let saveHandler: AssetObjectPersistence
 
-    init(saveHandler: SaveAssetItemHandler) {
+    init(saveHandler: AssetObjectPersistence) {
         self.saveHandler = saveHandler
     }
 
@@ -35,9 +35,9 @@ final class AssetFormInteractor: Interactor, AssetFormInteractable {
         return .success(detail)
     }
 
-    func submitAssetItem(_ item: AssetItem) {
-        delegate?.interactor(self, didStartSaveOperationOn: item)
-        saveHandler.saveAssetItem(item) { [weak self] result in
+    func submitAsset(_ asset: AssetObject) {
+        delegate?.interactor(self, didStartSaveOperationOn: asset)
+        saveHandler.saveAsset(asset) { [weak self] result in
             self?.delegate?.interactor(self!, didFinishSaveOperationWith: result)
         }
     }

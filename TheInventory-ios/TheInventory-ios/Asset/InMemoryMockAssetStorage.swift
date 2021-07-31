@@ -8,16 +8,16 @@
 import Foundation
 import InventoryEngine
 
-final class InMemoryMockAssetStorage: AssetItemDataStore {
+final class InMemoryMockAssetStorage: AssetObjectDataStore {
 
-    typealias Listener = ChangeListener<[AssetItem]>
+    typealias Listener = ChangeListener<[AssetObject]>
 
     static let shared = InMemoryMockAssetStorage()
 
-    var assetItems: [AssetItem]
+    var objects: [AssetObject]
 
     private var assets: [Asset] { didSet {
-        assetItems = assets.map(AssetItem.init)
+        objects = assets.map(AssetObject.init)
         notifyListeners()
     }}
 
@@ -30,7 +30,7 @@ final class InMemoryMockAssetStorage: AssetItemDataStore {
             Asset(name: "Hammer", detail: ""),
         ]
 
-        assetItems = assets.map(AssetItem.init)
+        objects = assets.map(AssetObject.init)
     }
 
     func subscribe(_ subscriber: @escaping Listener) -> AnyCancellable {
@@ -43,22 +43,22 @@ final class InMemoryMockAssetStorage: AssetItemDataStore {
 
     private func notifyListeners() {
         subscribers.forEach { _, handler in
-            handler(assetItems)
+            handler(objects)
         }
     }
 }
 
-extension InMemoryMockAssetStorage: SaveAssetItemHandler {
+extension InMemoryMockAssetStorage: AssetObjectPersistence {
 
-    func saveAssetItem(_ item: AssetItem, completion: @escaping (Result<String, Error>) -> Void) {
-        if item.isNewAsset {
-            let newAsset = Asset(name: item.name, detail: item.detail)
+    func saveAsset(_ object: AssetObject, completion: @escaping (Result<String, Error>) -> Void) {
+        if object.isNewAsset {
+            let newAsset = Asset(name: object.name, detail: object.detail)
             assets.append(newAsset)
             completion(.success(newAsset.uuid))
         } else {
-            assets.mutateElement(where: { item.isSameUuid(as: $0) }) { asset in
-                asset.name = item.name
-                asset.detail = item.detail
+            assets.mutateElement(where: { object.isSameUuid(as: $0) }) { asset in
+                asset.name = object.name
+                asset.detail = object.detail
                 completion(.success(asset.uuid))
             }
         }
