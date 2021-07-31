@@ -34,6 +34,20 @@
                ReferencedContainer = "container:../InventoryEngine/InventoryEngine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7C3D2CBD26B5E26200CB6BB6"
+               BuildableName = "Theme.framework"
+               BlueprintName = "Theme"
+               ReferencedContainer = "container:TheInventory.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

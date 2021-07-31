@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class AppearanceManager {
+public final class AppearanceManager {
 
-    static let shared = AppearanceManager()
+    public static let shared = AppearanceManager()
 
     private init() {}
 
-    func applyDefaultAppearance() {
+    public func applyDefaultAppearance() {
         UITextField.appearance().font = .systemFont(ofSize: 16, weight: .regular)
         UITextView.appearance().font = .systemFont(ofSize: 16, weight: .regular)
     }

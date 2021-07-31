@@ -9,9 +9,9 @@ import UIKit
 
 public struct AssetSceneFactory: ThemeableFactory {
 
-    let theme: Theme
-    let dataStore: AssetObjectDataStore
-    let persistence: AssetObjectPersistence
+    public let theme: Theme
+    public let dataStore: AssetObjectDataStore
+    public let persistence: AssetObjectPersistence
 
     public init(theme: Theme, dataStore: AssetObjectDataStore, persistence: AssetObjectPersistence) {
         self.theme = theme

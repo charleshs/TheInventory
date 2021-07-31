@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol ThemeableFactory {
+public protocol ThemeableFactory {
 
     var theme: Theme { get }
 }
 
 extension ThemeableFactory {
 
-    func decorated<T: UIViewController>(viewController creator: () -> T) -> T {
+    public func decorated<T: UIViewController>(viewController creator: () -> T) -> T {
         let controller = creator()
         if let themeable = controller as? Themeable {
             themeable.decorate(with: theme)
