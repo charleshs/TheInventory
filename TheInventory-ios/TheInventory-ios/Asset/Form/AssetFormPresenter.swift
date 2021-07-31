@@ -10,14 +10,12 @@ import UIKit
 protocol AssetFormPresentableDelegate: AnyObject {
 
     func loadingStatusChanged(_ presenter: AssetFormPresentable, isLoading: Bool)
-
     func assetObjectSaved(_ presenter: AssetFormPresentable)
 }
 
 protocol AssetFormPresentable {
 
     var delegate: AssetFormPresentableDelegate? { get set }
-
     var assetObject: AssetObject { get }
 }
 

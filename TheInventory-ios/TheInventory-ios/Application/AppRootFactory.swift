@@ -16,13 +16,17 @@ class AppRootFactory {
     private init() {}
 
     func makeRoot(withTheme theme: Theme = DefaultTheme()) -> UIViewController {
-        let rootVC = getAssetSceneFactory().makeAssetList()
+        let rootVC = getAssetSceneFactory().makeAssetListVC()
         let navigation = AppNavigationController(rootViewController: rootVC)
         navigation.decorate(with: theme)
         return navigation
     }
 
     func getAssetSceneFactory() -> AssetSceneFactory {
-        return AssetSceneFactory()
+        return AssetSceneFactory(
+            theme: DefaultTheme(),
+            dataStore: DefaultAssetObjectDataStore.mock,
+            persistence: DefaultAssetObjectDataStore.mock
+        )
     }
 }

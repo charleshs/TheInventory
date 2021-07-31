@@ -14,6 +14,8 @@
 		7C0D0EB826B03BEE001D8A9B /* AssetLocationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB726B03BEE001D8A9B /* AssetLocationImage.swift */; };
 		7C0D0EBA26B03BFE001D8A9B /* AssetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */; };
 		7C0D0EBC26B03D0F001D8A9B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */; };
+		7C46411126B5B7D5001100CB /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46411026B5B7D5001100CB /* AssetRepository.swift */; };
+		7C46411326B5C3D2001100CB /* MockAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46411226B5C3D2001100CB /* MockAssetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7C0D0EB726B03BEE001D8A9B /* AssetLocationImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLocationImage.swift; sourceTree = "<group>"; };
 		7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImage.swift; sourceTree = "<group>"; };
 		7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		7C46411026B5B7D5001100CB /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
+		7C46411226B5C3D2001100CB /* MockAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				7C0D0E8726B03545001D8A9B /* Asset.swift */,
 				7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */,
+				7C46411026B5B7D5001100CB /* AssetRepository.swift */,
+				7C46411226B5C3D2001100CB /* MockAssetRepository.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -172,8 +178,10 @@
 				7C0D0E8826B03545001D8A9B /* Asset.swift in Sources */,
 				7C0D0E8D26B0385F001D8A9B /* AssetLocation.swift in Sources */,
 				7C0D0EBA26B03BFE001D8A9B /* AssetImage.swift in Sources */,
+				7C46411126B5B7D5001100CB /* AssetRepository.swift in Sources */,
 				7C0D0EBC26B03D0F001D8A9B /* Reminder.swift in Sources */,
 				7C0D0E8F26B03888001D8A9B /* Expiry.swift in Sources */,
+				7C46411326B5C3D2001100CB /* MockAssetRepository.swift in Sources */,
 				7C0D0EB826B03BEE001D8A9B /* AssetLocationImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

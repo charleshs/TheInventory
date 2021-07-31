@@ -9,9 +9,11 @@ import UIKit
 
 final class AssetListViewController: UIViewController {
 
+    private let sceneFactory: AssetSceneFactory
     private let dataStore: AssetObjectDataStore
 
-    init(dataStore: AssetObjectDataStore) {
+    init(sceneFactory: AssetSceneFactory, dataStore: AssetObjectDataStore) {
+        self.sceneFactory = sceneFactory
         self.dataStore = dataStore
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,7 +38,7 @@ final class AssetListViewController: UIViewController {
     }
 
     @objc private func tapFloatingAddButton() {
-        let assetFormVC = AssetSceneFactory().makeAssetForm(AssetObject.create())
+        let assetFormVC = sceneFactory.makeAssetFormVC(AssetObject.create())
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
 
@@ -50,9 +52,8 @@ final class AssetListViewController: UIViewController {
     private var dataStoreListener: Cancellable?
     private func setupDataStore() {
         dataStoreListener = dataStore.subscribe { [weak self] _ in
-            DispatchQueue.main.async {
-                self?.listTableView.reloadData()
-            }
+            print("Data store updated")
+            self?.listTableView.reloadData()
         }
     }
 
@@ -99,7 +100,7 @@ extension AssetListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let asset = dataStore.objects[indexPath.row]
-        let assetFormVC = AssetSceneFactory().makeAssetForm(asset)
+        let assetFormVC = sceneFactory.makeAssetFormVC(asset)
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Observer.swift
+//  Cancellable.swift
 //  TheInventory-ios
 //
 //  Created by Charles Hsieh on 2021/7/31.

@@ -10,13 +10,13 @@ import InventoryEngine
 
 public final class AssetObject: NSObject {
 
-    var isNewAsset: Bool { uuid == nil }
-
     var name: String
     var detail: String
     var images: [UIImage]
 
-    private var uuid: String?
+    private(set) var uuid: String?
+
+    var isNewAsset: Bool { uuid == nil }
 
     public static func create() -> AssetObject {
         return .init(name: "", detail: "")
@@ -35,7 +35,9 @@ public final class AssetObject: NSObject {
         images = []
     }
 
-    public func isSameUuid(as asset: Asset) -> Bool {
-        return uuid == asset.uuid
+    func isDuplicate(of asset: Asset) -> Bool {
+        return asset.uuid == uuid
+            && asset.name == name
+            && asset.detail == detail
     }
 }

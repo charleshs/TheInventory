@@ -17,10 +17,10 @@ final class AssetFormInteractor: Interactor, AssetFormInteractable {
 
     weak var delegate: AssetFormInteractorDelegate?
 
-    private let saveHandler: AssetObjectPersistence
+    private let persistence: AssetObjectPersistence
 
-    init(saveHandler: AssetObjectPersistence) {
-        self.saveHandler = saveHandler
+    init(persistence: AssetObjectPersistence) {
+        self.persistence = persistence
     }
 
     func validateName(_ name: String?) -> Result<String, Error> {
@@ -37,7 +37,7 @@ final class AssetFormInteractor: Interactor, AssetFormInteractable {
 
     func submitAsset(_ asset: AssetObject) {
         delegate?.interactor(self, didStartSaveOperationOn: asset)
-        saveHandler.saveAsset(asset) { [weak self] result in
+        persistence.saveAsset(asset) { [weak self] result in
             self?.delegate?.interactor(self!, didFinishSaveOperationWith: result)
         }
     }
