@@ -17,7 +17,7 @@
                BlueprintIdentifier = "7C0D0E9826B03A17001D8A9B"
                BuildableName = "TheInventory-ios.app"
                BlueprintName = "TheInventory-ios"
-               ReferencedContainer = "container:TheInventory-ios.xcodeproj">
+               ReferencedContainer = "container:TheInventory.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -61,7 +61,7 @@
             BlueprintIdentifier = "7C0D0E9826B03A17001D8A9B"
             BuildableName = "TheInventory-ios.app"
             BlueprintName = "TheInventory-ios"
-            ReferencedContainer = "container:TheInventory-ios.xcodeproj">
+            ReferencedContainer = "container:TheInventory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "7C0D0E9826B03A17001D8A9B"
             BuildableName = "TheInventory-ios.app"
             BlueprintName = "TheInventory-ios"
-            ReferencedContainer = "container:TheInventory-ios.xcodeproj">
+            ReferencedContainer = "container:TheInventory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

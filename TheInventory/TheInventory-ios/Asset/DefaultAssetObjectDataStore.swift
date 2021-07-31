@@ -57,7 +57,7 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
 
 extension DefaultAssetObjectDataStore: AssetObjectPersistence {
 
-    func saveAsset(_ object: AssetObject, completion: @escaping (Result<String, Error>) -> Void) {
+    func saveAsset(_ object: AssetObject, completion: @escaping (Result<AssetIdentifier, Error>) -> Void) {
         // Construct "Asset" from "AssetObject"
         if object.isNewAsset {
             let newAsset = Asset(name: object.name, detail: object.detail)
@@ -79,7 +79,7 @@ extension DefaultAssetObjectDataStore: AssetObjectPersistence {
         }
     }
 
-    private func saveAssetWithRepository(_ asset: Asset, completion: @escaping (Result<String, Error>) -> Void) {
+    private func saveAssetWithRepository(_ asset: Asset, completion: @escaping (Result<AssetIdentifier, Error>) -> Void) {
         repository.saveAsset(asset) { [weak self] result in
             DispatchQueue.main.async {
                 if case .success = result {

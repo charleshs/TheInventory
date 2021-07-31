@@ -29,7 +29,7 @@ public final class MockAssetRepository: AssetRepository {
         }
     }
 
-    public func saveAsset(_ theAsset: Asset, completion: @escaping (Result<String, Error>) -> Void) {
+    public func saveAsset(_ theAsset: Asset, completion: @escaping (Result<AssetIdentifier, Error>) -> Void) {
         defer {
             delayed(0.3) {
                 completion(.success(theAsset.uuid))
@@ -44,7 +44,7 @@ public final class MockAssetRepository: AssetRepository {
         assets.append(theAsset)
     }
 
-    public func deleteAsset(uuid: String, completion: @escaping (Result<String, Error>) -> Void) {
+    public func deleteAsset(uuid: String, completion: @escaping (Result<AssetIdentifier, Error>) -> Void) {
         assets.removeAll(where: { $0.uuid == uuid })
 
         delayed(0.3) {
