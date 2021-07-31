@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,8 @@
 		7C0D0EB826B03BEE001D8A9B /* AssetLocationImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB726B03BEE001D8A9B /* AssetLocationImage.swift */; };
 		7C0D0EBA26B03BFE001D8A9B /* AssetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */; };
 		7C0D0EBC26B03D0F001D8A9B /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */; };
-		7C38679326B1C5E3007F1DC0 /* DevKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C38679226B1C5E3007F1DC0 /* DevKit */; };
+		7C46411126B5B7D5001100CB /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46411026B5B7D5001100CB /* AssetRepository.swift */; };
+		7C46411326B5C3D2001100CB /* MockAssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46411226B5C3D2001100CB /* MockAssetRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		7C0D0EB726B03BEE001D8A9B /* AssetLocationImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetLocationImage.swift; sourceTree = "<group>"; };
 		7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImage.swift; sourceTree = "<group>"; };
 		7C0D0EBB26B03D0F001D8A9B /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		7C46411026B5B7D5001100CB /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
+		7C46411226B5C3D2001100CB /* MockAssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAssetRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C38679326B1C5E3007F1DC0 /* DevKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +77,8 @@
 			children = (
 				7C0D0E8726B03545001D8A9B /* Asset.swift */,
 				7C0D0EB926B03BFE001D8A9B /* AssetImage.swift */,
+				7C46411026B5B7D5001100CB /* AssetRepository.swift */,
+				7C46411226B5C3D2001100CB /* MockAssetRepository.swift */,
 			);
 			path = Asset;
 			sourceTree = "<group>";
@@ -117,7 +121,6 @@
 			);
 			name = InventoryEngine;
 			packageProductDependencies = (
-				7C38679226B1C5E3007F1DC0 /* DevKit */,
 			);
 			productName = InventoryEngine;
 			productReference = 7C0D0E7C26B034F9001D8A9B /* InventoryEngine.framework */;
@@ -147,7 +150,6 @@
 			);
 			mainGroup = 7C0D0E7226B034F9001D8A9B;
 			packageReferences = (
-				7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */,
 			);
 			productRefGroup = 7C0D0E7D26B034F9001D8A9B /* Products */;
 			projectDirPath = "";
@@ -176,8 +178,10 @@
 				7C0D0E8826B03545001D8A9B /* Asset.swift in Sources */,
 				7C0D0E8D26B0385F001D8A9B /* AssetLocation.swift in Sources */,
 				7C0D0EBA26B03BFE001D8A9B /* AssetImage.swift in Sources */,
+				7C46411126B5B7D5001100CB /* AssetRepository.swift in Sources */,
 				7C0D0EBC26B03D0F001D8A9B /* Reminder.swift in Sources */,
 				7C0D0E8F26B03888001D8A9B /* Expiry.swift in Sources */,
+				7C46411326B5C3D2001100CB /* MockAssetRepository.swift in Sources */,
 				7C0D0EB826B03BEE001D8A9B /* AssetLocationImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,25 +388,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "file:///Users/charleshs/Developer/Swift/DevKit";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7C38679226B1C5E3007F1DC0 /* DevKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7C38679126B1C5E3007F1DC0 /* XCRemoteSwiftPackageReference "DevKit" */;
-			productName = DevKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C0D0E7326B034F9001D8A9B /* Project object */;
 }

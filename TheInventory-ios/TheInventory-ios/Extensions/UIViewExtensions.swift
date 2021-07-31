@@ -19,4 +19,13 @@ extension UIView {
             bottomAnchor.constraint(equalTo: parentView.bottomAnchor),
         ])
     }
+
+    public func anchor(to layoutGuide: UILayoutGuide, insets: UIEdgeInsets) {
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: layoutGuide.topAnchor, constant: insets.top),
+            leftAnchor.constraint(equalTo: layoutGuide.leftAnchor, constant: insets.left),
+            layoutGuide.rightAnchor.constraint(equalTo: rightAnchor, constant: insets.right),
+            layoutGuide.bottomAnchor.constraint(equalTo: bottomAnchor, constant: insets.bottom),
+        ])
+    }
 }
