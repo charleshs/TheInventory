@@ -108,5 +108,5 @@ private struct FloatingButtonShadow: ShadowConfiguration {
     var radius: CGFloat = 8
     var width: CGFloat = 0
     var height: CGFloat = 4
-    var color: UIColor = .blue.withAlphaComponent(0.2)
+    var color: UIColor = .black.withAlphaComponent(0.2)
 }

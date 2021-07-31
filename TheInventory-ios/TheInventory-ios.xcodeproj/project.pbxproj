@@ -26,6 +26,8 @@
 		7C38679526B1CB9A007F1DC0 /* ListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679426B1CB9A007F1DC0 /* ListScrollView.swift */; };
 		7C38679A26B23E45007F1DC0 /* AssetFormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679926B23E45007F1DC0 /* AssetFormTextField.swift */; };
 		7C38679C26B2409D007F1DC0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679B26B2409D007F1DC0 /* TextField.swift */; };
+		7C526EE526B569F000679999 /* InventoryEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0D0EB126B03B14001D8A9B /* InventoryEngine.framework */; };
+		7C526EE626B569F000679999 /* InventoryEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0D0EB126B03B14001D8A9B /* InventoryEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7C581D7326B4572500B30B57 /* AssetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D7226B4572500B30B57 /* AssetListViewController.swift */; };
 		7C581D7826B45BC500B30B57 /* InMemoryMockAssetStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D7726B45BC500B30B57 /* InMemoryMockAssetStorage.swift */; };
 		7C581D7A26B5178A00B30B57 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D7926B5178A00B30B57 /* AppNavigationController.swift */; };
@@ -49,6 +51,20 @@
 		7CEE68BA26B562020064B701 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE68B926B562020064B701 /* Interactor.swift */; };
 		7CEE68BD26B5621D0064B701 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE68BC26B5621D0064B701 /* Presenter.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7C526EE726B569F000679999 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7C526EE626B569F000679999 /* InventoryEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7C0D0E9926B03A17001D8A9B /* TheInventory-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheInventory-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C38679026B1C5AB007F1DC0 /* DevKit in Frameworks */,
+				7C526EE526B569F000679999 /* InventoryEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +304,7 @@
 				7C0D0E9526B03A17001D8A9B /* Sources */,
 				7C0D0E9626B03A17001D8A9B /* Frameworks */,
 				7C0D0E9726B03A17001D8A9B /* Resources */,
+				7C526EE726B569F000679999 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
