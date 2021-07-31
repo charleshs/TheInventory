@@ -11,6 +11,7 @@
 		7C0D0E9F26B03A17001D8A9B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */; };
 		7C0D0EA626B03A1A001D8A9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */; };
 		7C0D0EA926B03A1A001D8A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */; };
+		7C24466626B566A7001DF6C7 /* ShadowConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24466526B566A7001DF6C7 /* ShadowConfiguration.swift */; };
 		7C3488D526B2DE9200893DD6 /* AssetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3488D426B2DE9200893DD6 /* AssetItem.swift */; };
 		7C3488DA26B2E1B100893DD6 /* AssetFormImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3488D926B2E1B100893DD6 /* AssetFormImageView.swift */; };
 		7C3488DE26B2F70700893DD6 /* AssetFormTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3488DD26B2F70700893DD6 /* AssetFormTextView.swift */; };
@@ -35,8 +36,8 @@
 		7C581D8626B54EDB00B30B57 /* AssetFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8526B54EDB00B30B57 /* AssetFormInteractor.swift */; };
 		7C581D8826B54F3C00B30B57 /* AnyLocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */; };
 		7C581D8A26B5545700B30B57 /* AssetFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8926B5545700B30B57 /* AssetFormPresenter.swift */; };
-		7C581D8C26B55A7300B30B57 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8B26B55A7300B30B57 /* Cancellable.swift */; };
-		7C581D8E26B55CF400B30B57 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8D26B55CF400B30B57 /* Global.swift */; };
+		7C581D8C26B55A7300B30B57 /* AnyCancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8B26B55A7300B30B57 /* AnyCancellable.swift */; };
+		7C581D8E26B55CF400B30B57 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8D26B55CF400B30B57 /* Types.swift */; };
 		7C6B837D26B1831300406209 /* AssetFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837C26B1831300406209 /* AssetFormViewController.swift */; };
 		7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B837E26B183A300406209 /* AssetSceneFactory.swift */; };
 		7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838026B1840600406209 /* AppRootFactory.swift */; };
@@ -57,6 +58,7 @@
 		7C0D0EA826B03A1A001D8A9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C0D0EAA26B03A1A001D8A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C0D0EB126B03B14001D8A9B /* InventoryEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InventoryEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C24466526B566A7001DF6C7 /* ShadowConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowConfiguration.swift; sourceTree = "<group>"; };
 		7C3488D426B2DE9200893DD6 /* AssetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetItem.swift; sourceTree = "<group>"; };
 		7C3488D926B2E1B100893DD6 /* AssetFormImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormImageView.swift; sourceTree = "<group>"; };
 		7C3488DD26B2F70700893DD6 /* AssetFormTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormTextView.swift; sourceTree = "<group>"; };
@@ -80,8 +82,8 @@
 		7C581D8526B54EDB00B30B57 /* AssetFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormInteractor.swift; sourceTree = "<group>"; };
 		7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLocalizedError.swift; sourceTree = "<group>"; };
 		7C581D8926B5545700B30B57 /* AssetFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormPresenter.swift; sourceTree = "<group>"; };
-		7C581D8B26B55A7300B30B57 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
-		7C581D8D26B55CF400B30B57 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		7C581D8B26B55A7300B30B57 /* AnyCancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCancellable.swift; sourceTree = "<group>"; };
+		7C581D8D26B55CF400B30B57 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		7C6B837C26B1831300406209 /* AssetFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormViewController.swift; sourceTree = "<group>"; };
 		7C6B837E26B183A300406209 /* AssetSceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSceneFactory.swift; sourceTree = "<group>"; };
 		7C6B838026B1840600406209 /* AppRootFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootFactory.swift; sourceTree = "<group>"; };
@@ -127,14 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				7C0D0EAA26B03A1A001D8A9B /* Info.plist */,
-				7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */,
-				7C581D8B26B55A7300B30B57 /* Cancellable.swift */,
-				7C6B838226B1865000406209 /* ComingSoonViewController.swift */,
-				7C581D8D26B55CF400B30B57 /* Global.swift */,
 				7C0D0EA526B03A1A001D8A9B /* Assets.xcassets */,
 				7C0D0EBD26B0E8D8001D8A9B /* Application */,
 				7C581D7F26B5413A00B30B57 /* Asset */,
-				7CEE68BB26B562060064B701 /* Clean Architecture */,
+				7C24466726B567AE001DF6C7 /* Common */,
 				7C38679826B1CCCE007F1DC0 /* Components */,
 				7C37F67426B442F80041DB36 /* Convenience */,
 				7C37F66D26B41B210041DB36 /* Extensions */,
@@ -162,6 +160,18 @@
 				7C0D0E9E26B03A17001D8A9B /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		7C24466726B567AE001DF6C7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7C581D8B26B55A7300B30B57 /* AnyCancellable.swift */,
+				7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */,
+				7CEE68B926B562020064B701 /* Interactor.swift */,
+				7CEE68BC26B5621D0064B701 /* Presenter.swift */,
+				7C581D8D26B55CF400B30B57 /* Types.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		7C3488D326B2DDA500893DD6 /* Form */ = {
@@ -207,9 +217,11 @@
 			isa = PBXGroup;
 			children = (
 				7C581D7D26B520BF00B30B57 /* Button.swift */,
+				7C6B838226B1865000406209 /* ComingSoonViewController.swift */,
 				7C37F67226B4410E0041DB36 /* EdgeLineConfigurable.swift */,
 				7C38679426B1CB9A007F1DC0 /* ListScrollView.swift */,
 				7C581D7B26B51B1700B30B57 /* RoundedButton.swift */,
+				7C24466526B566A7001DF6C7 /* ShadowConfiguration.swift */,
 				7C38679B26B2409D007F1DC0 /* TextField.swift */,
 				7C3488E126B2F9B000893DD6 /* TextView.swift */,
 			);
@@ -263,15 +275,6 @@
 				7C0D0EA726B03A1A001D8A9B /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
-			sourceTree = "<group>";
-		};
-		7CEE68BB26B562060064B701 /* Clean Architecture */ = {
-			isa = PBXGroup;
-			children = (
-				7CEE68B926B562020064B701 /* Interactor.swift */,
-				7CEE68BC26B5621D0064B701 /* Presenter.swift */,
-			);
-			path = "Clean Architecture";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,7 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C581D8C26B55A7300B30B57 /* Cancellable.swift in Sources */,
+				7C581D8C26B55A7300B30B57 /* AnyCancellable.swift in Sources */,
 				7C3488DA26B2E1B100893DD6 /* AssetFormImageView.swift in Sources */,
 				7C6B838C26B192E000406209 /* DefaultTheme.swift in Sources */,
 				7C6B838826B192B700406209 /* Themeable.swift in Sources */,
@@ -371,6 +374,7 @@
 				7C37F66F26B41B2D0041DB36 /* UIViewExtensions.swift in Sources */,
 				7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */,
 				7C581D8326B5443E00B30B57 /* AssetItemUpdatable.swift in Sources */,
+				7C24466626B566A7001DF6C7 /* ShadowConfiguration.swift in Sources */,
 				7C581D8626B54EDB00B30B57 /* AssetFormInteractor.swift in Sources */,
 				7C3488E226B2F9B000893DD6 /* TextView.swift in Sources */,
 				7C37F67326B4410E0041DB36 /* EdgeLineConfigurable.swift in Sources */,
@@ -381,7 +385,7 @@
 				7C3488D526B2DE9200893DD6 /* AssetItem.swift in Sources */,
 				7CEE68BA26B562020064B701 /* Interactor.swift in Sources */,
 				7C0D0E9D26B03A17001D8A9B /* AppDelegate.swift in Sources */,
-				7C581D8E26B55CF400B30B57 /* Global.swift in Sources */,
+				7C581D8E26B55CF400B30B57 /* Types.swift in Sources */,
 				7C6B838326B1865000406209 /* ComingSoonViewController.swift in Sources */,
 				7C0D0E9F26B03A17001D8A9B /* SceneDelegate.swift in Sources */,
 				7C581D8A26B5545700B30B57 /* AssetFormPresenter.swift in Sources */,

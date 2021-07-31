@@ -33,10 +33,10 @@ final class InMemoryMockAssetStorage: AssetItemDataStore {
         assetItems = assets.map(AssetItem.init)
     }
 
-    func subscribe(_ subscriber: @escaping Listener) -> Cancellable {
+    func subscribe(_ subscriber: @escaping Listener) -> AnyCancellable {
         let uuid = UUID()
         subscribers[uuid] = subscriber
-        return Cancellable { [weak self] in
+        return AnyCancellable { [weak self] in
             self?.subscribers.removeValue(forKey: uuid)
         }
     }

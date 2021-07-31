@@ -11,7 +11,7 @@ public protocol AssetItemDataStore: AnyObject {
 
     var assetItems: [AssetItem] { get }
 
-    func subscribe(_ handler: @escaping ChangeListener<[AssetItem]>) -> Cancellable
+    func subscribe(_ handler: @escaping ChangeListener<[AssetItem]>) -> AnyCancellable
 }
 
 public protocol SaveAssetItemHandler {

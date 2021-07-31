@@ -7,9 +7,9 @@
 
 import UIKit
 
-class RoundedButton: Button {
+open class RoundedButton: Button {
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         cornerRadius = bounds.height / 2
     }

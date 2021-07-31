@@ -7,11 +7,16 @@
 
 import Foundation
 
-public final class Cancellable {
+public protocol Cancellable {
+
+    func cancel()
+}
+
+public final class AnyCancellable: Cancellable {
 
     private let cancellation: (() -> Void)?
 
-    init(_ onCancel: @escaping () -> Void) {
+    public init(_ onCancel: @escaping () -> Void) {
         cancellation = onCancel
     }
 
@@ -19,7 +24,7 @@ public final class Cancellable {
         cancel()
     }
 
-    func cancel() {
+    public func cancel() {
         cancellation?()
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class Button: UIControl, ViewShadowable {
+open class Button: UIControl {
 
     public var cornerRadius: CGFloat {
         get { uiButton.layer.cornerRadius }
@@ -46,23 +46,24 @@ open class Button: UIControl, ViewShadowable {
         uiButton.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
     }
 
-    public func enableShadow() {
+    open func dropShadow(with configuration: ShadowConfiguration) {
         guard subviews.contains(shadowView) else {
             insertSubview(shadowView, belowSubview: uiButton)
             shadowView.anchor(to: safeAreaLayoutGuide, insets: .zero)
-            return enableShadow()
+            return dropShadow(with: configuration)
         }
 
         shadowView.backgroundColor = .white
-        shadowView.dropShadow(opacity: 1, radius: 8, offset: CGSize(width: 0, height: 4), color: .black.withAlphaComponent(0.2))
+        shadowView.layer.setShadow(
+            opacity: configuration.opacity,
+            radius: configuration.radius,
+            offset: CGSize(width: configuration.width, height: configuration.height),
+            color: configuration.color,
+            path: configuration.path
+        )
     }
 
     @objc private func tapButton() {
         sendActions(for: .touchUpInside)
     }
-}
-
-public protocol ViewShadowable {
-
-    func enableShadow()
 }

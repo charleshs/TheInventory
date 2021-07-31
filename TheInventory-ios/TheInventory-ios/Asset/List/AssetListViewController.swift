@@ -7,11 +7,11 @@
 
 import UIKit
 
-public final class AssetListViewController: UIViewController {
+final class AssetListViewController: UIViewController {
 
     private let dataStore: AssetItemDataStore
 
-    public init(dataStore: AssetItemDataStore) {
+    init(dataStore: AssetItemDataStore) {
         self.dataStore = dataStore
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,7 +31,7 @@ public final class AssetListViewController: UIViewController {
         $0.uiButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         $0.uiButton.setImage(UIImage(systemName: "plus")?.resizableImage(withCapInsets: .zero), for: .normal)
         $0.uiButton.setBackgroundImage(UIColor.white.toImage(), for: .normal)
-        $0.enableShadow()
+        $0.dropShadow(with: FloatingButtonShadow())
         $0.addTarget(self, action: #selector(tapFloatingAddButton), for: .touchUpInside)
     }
 
@@ -40,7 +40,7 @@ public final class AssetListViewController: UIViewController {
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupDataStore()
         layoutListTableView()
@@ -75,7 +75,7 @@ public final class AssetListViewController: UIViewController {
 
 extension AssetListViewController: Themeable {
 
-    public func decorate(with theme: Theme) {
+    func decorate(with theme: Theme) {
         overrideUserInterfaceStyle = theme.userInterfaceStyle
         view.backgroundColor = theme.mainBackground
     }
@@ -83,11 +83,11 @@ extension AssetListViewController: Themeable {
 
 extension AssetListViewController: UITableViewDataSource, UITableViewDelegate {
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataStore.assetItems.count
     }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let asset = dataStore.assetItems[indexPath.row]
 
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
@@ -95,10 +95,18 @@ extension AssetListViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
 
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let asset = dataStore.assetItems[indexPath.row]
         let assetFormVC = AssetSceneFactory().makeAssetForm(asset)
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
+}
+
+private struct FloatingButtonShadow: ShadowConfiguration {
+    var opacity: Float = 1
+    var radius: CGFloat = 8
+    var width: CGFloat = 0
+    var height: CGFloat = 4
+    var color: UIColor = .blue.withAlphaComponent(0.2)
 }
