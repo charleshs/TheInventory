@@ -28,7 +28,7 @@ final class AssetFormTextField: TextField, EdgeLineConfigurable {
     private func initSetup() {
         contentInsets = Constant.contentInsets
         borderStyle = .none
-        addBottomLine(on: self, withColor: .lightGray, insets: Constant.bottomLineInsets)
+        addBottomLine(onTo: self, withColor: .lightGray, insets: Constant.bottomLineInsets)
     }
 }
 

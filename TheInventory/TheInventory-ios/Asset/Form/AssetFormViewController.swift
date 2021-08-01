@@ -14,7 +14,7 @@ public protocol AssetFormInteractable {
     func submitAsset(_ asset: AssetObject)
 }
 
-public final class AssetFormViewController: ViewController {
+public final class AssetFormViewController: ViewController, LoadingStatusIndicatable {
 
     var interactor: AssetFormInteractable?
 
@@ -41,7 +41,7 @@ public final class AssetFormViewController: ViewController {
         self.asset = presenter.assetObject
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,9 +59,7 @@ public final class AssetFormViewController: ViewController {
 
         layoutListScrollView()
 
-        navigationItem.rightBarButtonItems = [
-            makeSaveBarButton()
-        ]
+        navigationItem.rightBarButtonItems = [saveBarButton]
     }
 
     private func layoutListScrollView() {
@@ -69,12 +67,10 @@ public final class AssetFormViewController: ViewController {
         listScrollView.anchor(to: view.safeAreaLayoutGuide, insets: .zero)
     }
 
-    private func makeSaveBarButton() -> UIBarButtonItem {
-        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(tapSaveBarButton))
-        return saveButton
-    }
+    private lazy var saveBarButton =
+        UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveBarButtonTapped))
 
-    @objc private func tapSaveBarButton() {
+    @objc private func saveBarButtonTapped() {
         guard let interactor = interactor else {
             return print("Interactor is missing in \(Self.self)")
         }
@@ -82,6 +78,7 @@ public final class AssetFormViewController: ViewController {
             asset.name = try interactor.validateName(profileSectionVC.assetName).get()
             asset.detail = try interactor.validateDetail(profileSectionVC.assetDetail).get()
             interactor.submitAsset(asset)
+            view.endEditing(false)
         } catch {
             print(error)
         }
@@ -99,10 +96,16 @@ extension AssetFormViewController: Themeable {
 extension AssetFormViewController: AssetFormPresentableDelegate {
 
     func loadingStatusChanged(_ presenter: AssetFormPresentable, isLoading: Bool) {
-        print("Loading: \(isLoading)")
+        isLoading ? startLoading() : stopLoading()
     }
 
     func assetObjectSaved(_ presenter: AssetFormPresentable) {
-        navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: nil, message: "Success", preferredStyle: .alert)
+            .withAction(title: "OK", style: .default, handler: nil)
+            .withPreferredAction(title: "Go Back", style: .default) { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+
+        present(alert, animated: true, completion: nil)
     }
 }

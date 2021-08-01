@@ -14,11 +14,13 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
 
     typealias Listener = ChangeListener<[AssetObject]>
 
-    var objects: [AssetObject] = []
+    var objects: [AssetObject] = [] { didSet {
+        guard objects != oldValue else { return }
+        notifyListenersForObjectChanges()
+    }}
 
     private var assets: [Asset] = [] { didSet {
         objects = assets.map(AssetObject.init)
-        notifyListeners()
     }}
 
     private let repository: AssetRepository
@@ -40,7 +42,7 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         }
     }
 
-    func subscribe(_ subscriber: @escaping Listener) -> AnyCancellable {
+    func subscribe(_ subscriber: @escaping Listener) -> Cancellable {
         let uuid = UUID()
         subscribers[uuid] = subscriber
         return AnyCancellable { [weak self] in
@@ -48,7 +50,7 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         }
     }
 
-    private func notifyListeners() {
+    private func notifyListenersForObjectChanges() {
         subscribers.forEach { _, handler in
             handler(objects)
         }
