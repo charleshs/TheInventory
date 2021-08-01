@@ -100,6 +100,12 @@ extension AssetFormViewController: AssetFormPresentableDelegate {
     }
 
     func assetObjectSaved(_ presenter: AssetFormPresentable) {
-        navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: nil, message: "Success", preferredStyle: .alert)
+            .withAction(title: "OK", style: .default, handler: nil)
+            .withPreferredAction(title: "Go Back", style: .default) { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+
+        present(alert, animated: true, completion: nil)
     }
 }

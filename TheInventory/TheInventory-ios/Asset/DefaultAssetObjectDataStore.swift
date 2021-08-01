@@ -42,7 +42,7 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         }
     }
 
-    func subscribe(_ subscriber: @escaping Listener) -> AnyCancellable {
+    func subscribe(_ subscriber: @escaping Listener) -> Cancellable {
         let uuid = UUID()
         subscribers[uuid] = subscriber
         return AnyCancellable { [weak self] in

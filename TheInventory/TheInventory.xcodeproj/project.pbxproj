@@ -54,6 +54,7 @@
 		7C90096226B6B174000C6D68 /* Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90096126B6B174000C6D68 /* Anchorable.swift */; };
 		7C90096426B6B1E9000C6D68 /* UILayoutGuide+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90096326B6B1E9000C6D68 /* UILayoutGuide+Anchorable.swift */; };
 		7C90096626B6B220000C6D68 /* UIView+Anchorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90096526B6B220000C6D68 /* UIView+Anchorable.swift */; };
+		7C90096A26B6BCDF000C6D68 /* UIAlertController+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C90096926B6BCDF000C6D68 /* UIAlertController+Builder.swift */; };
 		7CA3D4E926B694FC00447D22 /* LoadingStatusIndicatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3D4E826B694FC00447D22 /* LoadingStatusIndicatable.swift */; };
 		7CA3D4EA26B698B600447D22 /* Theme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D2CBE26B5E26200CB6BB6 /* Theme.framework */; };
 		7CA3D4EB26B698B600447D22 /* Theme.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C3D2CBE26B5E26200CB6BB6 /* Theme.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -139,6 +140,7 @@
 		7C90096126B6B174000C6D68 /* Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchorable.swift; sourceTree = "<group>"; };
 		7C90096326B6B1E9000C6D68 /* UILayoutGuide+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Anchorable.swift"; sourceTree = "<group>"; };
 		7C90096526B6B220000C6D68 /* UIView+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchorable.swift"; sourceTree = "<group>"; };
+		7C90096926B6BCDF000C6D68 /* UIAlertController+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Builder.swift"; sourceTree = "<group>"; };
 		7CA3D4E826B694FC00447D22 /* LoadingStatusIndicatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStatusIndicatable.swift; sourceTree = "<group>"; };
 		7CA3D4EC26B69B1500447D22 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		7CA3D4EF26B69CFC00447D22 /* AssetListUIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListUIComponents.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			children = (
 				7C37F67726B447F40041DB36 /* Array+Manipulations.swift */,
 				7C37F67526B443140041DB36 /* Then.swift */,
+				7C90096926B6BCDF000C6D68 /* UIAlertController+Builder.swift */,
 				7C37F66E26B41B2D0041DB36 /* UIView+Layout.swift */,
 				7C90096726B6B903000C6D68 /* Anchorable */,
 			);
@@ -515,6 +518,7 @@
 				7C38679526B1CB9A007F1DC0 /* ListScrollView.swift in Sources */,
 				7C581D7C26B51B1700B30B57 /* RoundedButton.swift in Sources */,
 				7C37F67626B443140041DB36 /* Then.swift in Sources */,
+				7C90096A26B6BCDF000C6D68 /* UIAlertController+Builder.swift in Sources */,
 				7C581D8126B541DB00B30B57 /* AssetObjectDataStore.swift in Sources */,
 				7C6B837F26B183A300406209 /* AssetSceneFactory.swift in Sources */,
 				7CA3D4F026B69CFC00447D22 /* AssetListUIComponents.swift in Sources */,
