@@ -23,7 +23,7 @@ final class AssetFormTextView: TextView, EdgeLineConfigurable {
 
     private func setupBottomLine() {
         if let textContainerView = findSubviews(withClassName: "_UITextContainerView").first {
-            addBottomLine(on: textContainerView, withColor: .lightGray, insets: Constant.bottomLineInsets)
+            addBottomLine(onTo: textContainerView, withColor: .lightGray, insets: Constant.bottomLineInsets)
         }
     }
 }

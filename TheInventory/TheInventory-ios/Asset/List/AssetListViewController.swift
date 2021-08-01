@@ -22,26 +22,6 @@ final class AssetListViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private(set) lazy var listTableView = UITableView(frame: .zero, style: .plain).then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.dataSource = self
-        $0.delegate = self
-    }
-
-    private lazy var floatingAddButton: Button = RoundedButton().then {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.uiButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
-        $0.uiButton.setImage(UIImage(systemName: "plus")?.resizableImage(withCapInsets: .zero), for: .normal)
-        $0.uiButton.setBackgroundImage(UIColor.white.toImage(), for: .normal)
-        $0.dropShadow(with: FloatingButtonShadow())
-        $0.addTarget(self, action: #selector(tapFloatingAddButton), for: .touchUpInside)
-    }
-
-    @objc private func tapFloatingAddButton() {
-        let assetFormVC = sceneFactory.makeAssetFormVC(AssetObject.create())
-        navigationController?.pushViewController(assetFormVC, animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataStore()
@@ -57,9 +37,26 @@ final class AssetListViewController: UIViewController {
         }
     }
 
+    // MARK: - List table view
+    private(set) lazy var listTableView = UITableView(frame: .zero, style: .plain).then {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.dataSource = self
+        $0.delegate = self
+    }
+
     private func layoutListTableView() {
         view.addSubview(listTableView)
         listTableView.anchor(to: view.safeAreaLayoutGuide, insets: .zero)
+    }
+
+    // MARK: - Floating "Add" button
+    private lazy var floatingAddButton: Button = AssetListUIComponents.floatingAddButton().then {
+        $0.addTarget(self, action: #selector(floatingAddButtonTapped), for: .touchUpInside)
+    }
+
+    @objc private func floatingAddButtonTapped() {
+        let assetFormVC = sceneFactory.makeAssetFormVC(AssetObject.create())
+        navigationController?.pushViewController(assetFormVC, animated: true)
     }
 
     private func layoutFloatingAddButton() {
@@ -103,12 +100,4 @@ extension AssetListViewController: UITableViewDataSource, UITableViewDelegate {
         let assetFormVC = sceneFactory.makeAssetFormVC(asset)
         navigationController?.pushViewController(assetFormVC, animated: true)
     }
-}
-
-private struct FloatingButtonShadow: ShadowConfiguration {
-    var opacity: Float = 1
-    var radius: CGFloat = 8
-    var width: CGFloat = 0
-    var height: CGFloat = 4
-    var color: UIColor = .black.withAlphaComponent(0.2)
 }
