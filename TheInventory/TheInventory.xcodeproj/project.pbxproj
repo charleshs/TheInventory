@@ -40,7 +40,7 @@
 		7C581D7C26B51B1700B30B57 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D7B26B51B1700B30B57 /* RoundedButton.swift */; };
 		7C581D7E26B520BF00B30B57 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D7D26B520BF00B30B57 /* Button.swift */; };
 		7C581D8126B541DB00B30B57 /* AssetObjectDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8026B541DB00B30B57 /* AssetObjectDataStore.swift */; };
-		7C581D8326B5443E00B30B57 /* AssetObjectUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8226B5443E00B30B57 /* AssetObjectUpdatable.swift */; };
+		7C581D8326B5443E00B30B57 /* UpdatableByAssetObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8226B5443E00B30B57 /* UpdatableByAssetObject.swift */; };
 		7C581D8626B54EDB00B30B57 /* AssetFormInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8526B54EDB00B30B57 /* AssetFormInteractor.swift */; };
 		7C581D8826B54F3C00B30B57 /* AnyLocalizedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */; };
 		7C581D8A26B5545700B30B57 /* AssetFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C581D8926B5545700B30B57 /* AssetFormPresenter.swift */; };
@@ -112,7 +112,7 @@
 		7C581D7B26B51B1700B30B57 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		7C581D7D26B520BF00B30B57 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		7C581D8026B541DB00B30B57 /* AssetObjectDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetObjectDataStore.swift; sourceTree = "<group>"; };
-		7C581D8226B5443E00B30B57 /* AssetObjectUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetObjectUpdatable.swift; sourceTree = "<group>"; };
+		7C581D8226B5443E00B30B57 /* UpdatableByAssetObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableByAssetObject.swift; sourceTree = "<group>"; };
 		7C581D8526B54EDB00B30B57 /* AssetFormInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormInteractor.swift; sourceTree = "<group>"; };
 		7C581D8726B54F3C00B30B57 /* AnyLocalizedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyLocalizedError.swift; sourceTree = "<group>"; };
 		7C581D8926B5545700B30B57 /* AssetFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetFormPresenter.swift; sourceTree = "<group>"; };
@@ -325,9 +325,9 @@
 			children = (
 				7C3488D426B2DE9200893DD6 /* AssetObject.swift */,
 				7C581D8026B541DB00B30B57 /* AssetObjectDataStore.swift */,
-				7C581D8226B5443E00B30B57 /* AssetObjectUpdatable.swift */,
 				7C6B837E26B183A300406209 /* AssetSceneFactory.swift */,
 				7C581D7726B45BC500B30B57 /* DefaultAssetObjectDataStore.swift */,
+				7C581D8226B5443E00B30B57 /* UpdatableByAssetObject.swift */,
 				7C3488D326B2DDA500893DD6 /* Form */,
 				7C581D7126B456F900B30B57 /* List */,
 			);
@@ -485,7 +485,7 @@
 				7C37F66F26B41B2D0041DB36 /* UIViewExtensions.swift in Sources */,
 				7C6B838126B1840600406209 /* AppRootFactory.swift in Sources */,
 				7C46411526B5C6BF001100CB /* ViewController.swift in Sources */,
-				7C581D8326B5443E00B30B57 /* AssetObjectUpdatable.swift in Sources */,
+				7C581D8326B5443E00B30B57 /* UpdatableByAssetObject.swift in Sources */,
 				7C24466626B566A7001DF6C7 /* ShadowConfiguration.swift in Sources */,
 				7C581D8626B54EDB00B30B57 /* AssetFormInteractor.swift in Sources */,
 				7C3488E226B2F9B000893DD6 /* TextView.swift in Sources */,

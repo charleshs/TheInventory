@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AssetProfileSecionViewController: UIViewController, AssetObjectUpdatable {
+final class AssetProfileSecionViewController: UIViewController {
 
     var assetName: String? { assetNameTextField.text }
 
@@ -31,11 +31,6 @@ final class AssetProfileSecionViewController: UIViewController, AssetObjectUpdat
         editorColumnStack.pasteOn(view)
     }
 
-    func update(by asset: AssetObject) {
-        assetNameTextField.text = asset.name
-        assetDetailTextView.text = asset.detail
-    }
-
     private lazy var editorColumnStack = UIStackView(axis: .vertical, spacing: 0, distribution: .fill, alignment: .fill)
 
     private lazy var imagesCollectionView = UICollectionView(frame: .zero, collectionViewLayout: imagesFlowLayout)
@@ -45,4 +40,12 @@ final class AssetProfileSecionViewController: UIViewController, AssetObjectUpdat
         layout.scrollDirection = .horizontal
         return layout
     }()
+}
+
+extension AssetProfileSecionViewController: UpdatableByAssetObject {
+
+    func update(by asset: AssetObject) {
+        assetNameTextField.text = asset.name
+        assetDetailTextView.text = asset.detail
+    }
 }

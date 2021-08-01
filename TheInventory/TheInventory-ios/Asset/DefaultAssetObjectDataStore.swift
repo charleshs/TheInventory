@@ -14,11 +14,13 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
 
     typealias Listener = ChangeListener<[AssetObject]>
 
-    var objects: [AssetObject] = []
+    var objects: [AssetObject] = [] { didSet {
+        guard objects != oldValue else { return }
+        notifyListenersForObjectChanges()
+    }}
 
     private var assets: [Asset] = [] { didSet {
         objects = assets.map(AssetObject.init)
-        notifyListeners()
     }}
 
     private let repository: AssetRepository
@@ -48,7 +50,7 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         }
     }
 
-    private func notifyListeners() {
+    private func notifyListenersForObjectChanges() {
         subscribers.forEach { _, handler in
             handler(objects)
         }
