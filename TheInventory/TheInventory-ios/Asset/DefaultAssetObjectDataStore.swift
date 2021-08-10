@@ -32,12 +32,10 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         loadData()
     }
 
-    private func loadData() {
-        repository.fetchAssets { [weak self] result in
+    func refreshData(completion: @escaping (Error?) -> Void) {
+        loadData { error in
             DispatchQueue.main.async {
-                if case .success(let assets) = result {
-                    self?.assets = assets
-                }
+                completion(error)
             }
         }
     }
@@ -50,9 +48,23 @@ final class DefaultAssetObjectDataStore: AssetObjectDataStore {
         }
     }
 
+    private func loadData(completion: ((Error?) -> Void)? = nil) {
+        repository.fetchAssets { [weak self] result in
+            switch result {
+            case .failure(let error):
+                completion?(error)
+            case .success(let assets):
+                completion?(nil)
+                self?.assets = assets
+            }
+        }
+    }
+
     private func notifyListenersForObjectChanges() {
         subscribers.forEach { _, handler in
-            handler(objects)
+            DispatchQueue.main.async {
+                handler(self.objects)
+            }
         }
     }
 }

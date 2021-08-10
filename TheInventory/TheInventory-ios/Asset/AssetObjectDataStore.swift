@@ -11,6 +11,7 @@ public protocol AssetObjectDataStore: AnyObject {
 
     var objects: [AssetObject] { get }
 
+    func refreshData(completion: @escaping (Error?) -> Void)
     func subscribe(_ handler: @escaping ChangeListener<[AssetObject]>) -> Cancellable
 }
 

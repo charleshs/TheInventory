@@ -14,7 +14,7 @@ public protocol AssetFormInteractable {
     func submitAsset(_ asset: AssetObject)
 }
 
-public final class AssetFormViewController: ViewController, LoadingStatusIndicatable {
+public final class AssetFormViewController: ThemeViewController, LoadingStatusIndicatable {
 
     var interactor: AssetFormInteractable?
 
@@ -82,14 +82,6 @@ public final class AssetFormViewController: ViewController, LoadingStatusIndicat
         } catch {
             print(error)
         }
-    }
-}
-
-extension AssetFormViewController: Themeable {
-
-    public func decorate(with theme: Theme) {
-        overrideUserInterfaceStyle = theme.userInterfaceStyle
-        view.backgroundColor = theme.mainBackground
     }
 }
 

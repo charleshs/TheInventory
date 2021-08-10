@@ -6,10 +6,19 @@
 //
 
 import UIKit
+import Theme
 
 open class ViewController: UIViewController {
 
     deinit {
-        print("deinit - \(self)")
+        print("\(self) deinit")
+    }
+}
+
+open class ThemeViewController: ViewController, Themeable {
+
+    open func decorate(with theme: Theme) {
+        overrideUserInterfaceStyle = theme.userInterfaceStyle
+        view.backgroundColor = theme.mainBackground
     }
 }

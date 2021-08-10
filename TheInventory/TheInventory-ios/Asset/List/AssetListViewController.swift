@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AssetListViewController: UIViewController {
+final class AssetListViewController: ThemeViewController, LoadingStatusIndicatable {
 
     private let sceneFactory: AssetSceneFactory
     private let dataStore: AssetObjectDataStore
@@ -27,6 +27,7 @@ final class AssetListViewController: UIViewController {
         setupDataStore()
         layoutListTableView()
         layoutFloatingAddButton()
+        refreshData()
     }
 
     private var dataStoreListener: Cancellable?
@@ -34,6 +35,20 @@ final class AssetListViewController: UIViewController {
         dataStoreListener = dataStore.subscribe { [weak self] _ in
             print("Data store updated")
             self?.listTableView.reloadData()
+            self?.stopLoading()
+        }
+    }
+
+    private func refreshData() {
+        startLoading()
+        dataStore.refreshData { [weak self] error in
+            self?.stopLoading()
+
+            if let error = error {
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    .withAction(title: "OK")
+                self?.present(alert, animated: true, completion: nil)
+            }
         }
     }
 
@@ -68,14 +83,6 @@ final class AssetListViewController: UIViewController {
             floatingAddButton.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -16),
             floatingAddButton.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -24),
         ])
-    }
-}
-
-extension AssetListViewController: Themeable {
-
-    func decorate(with theme: Theme) {
-        overrideUserInterfaceStyle = theme.userInterfaceStyle
-        view.backgroundColor = theme.mainBackground
     }
 }
 

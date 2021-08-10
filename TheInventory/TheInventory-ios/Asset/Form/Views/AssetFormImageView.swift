@@ -9,6 +9,13 @@ import UIKit
 
 final class AssetFormImageView: UIControl {
 
+    override var isHighlighted: Bool {
+        didSet {
+            guard isHighlighted != oldValue else { return }
+            renderForHighlightState()
+        }
+    }
+
     private struct Constant {
         static let imageViewCornerRadius: CGFloat = 8
         static let highlightAnimationDuration: TimeInterval = 0.2
@@ -30,18 +37,13 @@ final class AssetFormImageView: UIControl {
         return imageView
     }()
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        UIView.animate(withDuration: Constant.highlightAnimationDuration) {
-            self.imageView.alpha = 0.8
-        }
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-        UIView.animate(withDuration: Constant.highlightAnimationDuration) {
-            self.imageView.alpha = 1
-        }
+    private func renderForHighlightState() {
+        UIView.animate(withDuration: Constant.highlightAnimationDuration,
+                       delay: 0,
+                       options: [.beginFromCurrentState, .curveLinear],
+                       animations: {
+                        self.imageView.alpha = self.isHighlighted ? 0.8 : 1
+                       })
     }
 
     private func addImageViewToHierarchyIfNeeded() {
