@@ -27,7 +27,6 @@
 		7C38679C26B2409D007F1DC0 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C38679B26B2409D007F1DC0 /* TextField.swift */; };
 		7C3D2CCF26B5E28E00CB6BB6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838926B192CB00406209 /* Theme.swift */; };
 		7C3D2CD026B5E28E00CB6BB6 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838726B192B700406209 /* Themeable.swift */; };
-		7C3D2CD126B5E28E00CB6BB6 /* ThemeableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838D26B1933900406209 /* ThemeableFactory.swift */; };
 		7C3D2CD226B5E28E00CB6BB6 /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B838B26B192E000406209 /* DefaultTheme.swift */; };
 		7C3D2CD626B5E2EA00CB6BB6 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37F67026B43FD90041DB36 /* AppearanceManager.swift */; };
 		7C46411526B5C6BF001100CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C46411426B5C6BF001100CB /* ViewController.swift */; };
@@ -135,7 +134,6 @@
 		7C6B838726B192B700406209 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
 		7C6B838926B192CB00406209 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7C6B838B26B192E000406209 /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
-		7C6B838D26B1933900406209 /* ThemeableFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeableFactory.swift; sourceTree = "<group>"; };
 		7C89D07F26B5E48F00DE4A81 /* Imports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imports.swift; sourceTree = "<group>"; };
 		7C90096126B6B174000C6D68 /* Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Anchorable.swift; sourceTree = "<group>"; };
 		7C90096326B6B1E9000C6D68 /* UILayoutGuide+Anchorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILayoutGuide+Anchorable.swift"; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				7C6B838B26B192E000406209 /* DefaultTheme.swift */,
 				7C6B838926B192CB00406209 /* Theme.swift */,
 				7C6B838726B192B700406209 /* Themeable.swift */,
-				7C6B838D26B1933900406209 /* ThemeableFactory.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -551,7 +548,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C3D2CD126B5E28E00CB6BB6 /* ThemeableFactory.swift in Sources */,
 				7C3D2CD226B5E28E00CB6BB6 /* DefaultTheme.swift in Sources */,
 				7C3D2CCF26B5E28E00CB6BB6 /* Theme.swift in Sources */,
 				7C3D2CD026B5E28E00CB6BB6 /* Themeable.swift in Sources */,

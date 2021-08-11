@@ -7,7 +7,7 @@
 
 import UIKit
 
-public struct AssetSceneFactory: ThemeableFactory {
+public struct AssetSceneFactory {
 
     public let theme: Theme
     public let dataStore: AssetObjectDataStore
@@ -20,18 +20,18 @@ public struct AssetSceneFactory: ThemeableFactory {
     }
 
     public func makeAssetListVC() -> UIViewController {
-        return decorated { AssetListViewController(sceneFactory: self, dataStore: dataStore) }
+        AssetListViewController(sceneFactory: self, dataStore: dataStore).decorated(with: theme)
     }
 
     public func makeAssetFormVC(_ asset: AssetObject) -> UIViewController {
         let interactor = AssetFormInteractor(persistence: persistence)
         let presenter = AssetFormPresenter(assetObject: asset)
-        let viewController = AssetFormViewController(presenter: presenter)
+        let viewController = AssetFormViewController(presenter: presenter).decorated(with: theme)
 
         viewController.interactor = interactor
         interactor.delegate = presenter
         presenter.delegate = viewController
 
-        return decorated { viewController }
+        return viewController
     }
 }

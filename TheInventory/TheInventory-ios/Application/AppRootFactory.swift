@@ -8,27 +8,21 @@
 import UIKit
 import Theme
 
-class AppRootFactory: ThemeableFactory {
+class AppRootFactory {
 
     class var shared: AppRootFactory { return appInstance }
-
-    var theme: Theme = DefaultTheme()
 
     private static let appInstance = AppRootFactory()
 
     private init() {}
 
     func makeRoot(withTheme theme: Theme = DefaultTheme()) -> UIViewController {
-        self.theme = theme
-
-        let rootVC = getAssetSceneFactory().makeAssetListVC()
-        let navigation = decorated {
-            AppNavigationController(rootViewController: rootVC)
-        }
+        let rootVC = getAssetSceneFactory(theme: theme).makeAssetListVC()
+        let navigation = AppNavigationController(rootViewController: rootVC).decorated(with: theme)
         return navigation
     }
 
-    func getAssetSceneFactory() -> AssetSceneFactory {
+    func getAssetSceneFactory(theme: Theme) -> AssetSceneFactory {
         return AssetSceneFactory(
             theme: theme,
             dataStore: DefaultAssetObjectDataStore.mock,

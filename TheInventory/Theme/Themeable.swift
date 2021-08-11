@@ -11,3 +11,11 @@ public protocol Themeable {
 
     func decorate(with theme: Theme)
 }
+
+extension Themeable {
+
+    public func decorated(with theme: Theme) -> Self {
+        self.decorate(with: theme)
+        return self
+    }
+}
